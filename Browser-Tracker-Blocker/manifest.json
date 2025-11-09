@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Tracker Blocker",
+  "version": "1.0",
+  "description": "Blocks known tracking scripts and shows how many were blocked.",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tracker Blocker"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
